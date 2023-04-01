@@ -10,7 +10,12 @@ app.use("/api/otp", otpRouter)
 
 
 app.get("/", async (req, res) => {
-    console.log("hello from otp new project")
+    try {
+        return res.status(200).json({status:"success",message:"server runnig Successfully"})
+    } catch (error) {
+        return res.status(200).json({status:false,data:"server not runnig ",error:error.message})
+        
+    }
 })
 
 
